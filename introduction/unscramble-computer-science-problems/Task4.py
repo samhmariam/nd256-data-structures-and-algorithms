@@ -25,3 +25,31 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
+# Create sets to store numbers that make outgoing calls but never send texts, receive texts or receive incoming calls
+outgoing_calls = set()
+incoming_calls = set()
+outgoing_texts = set()
+incoming_texts = set()
+
+# Iterate over calls and texts to extract numbers that make outgoing calls, receive incoming calls, send texts, and receive texts
+for call in calls:
+    outgoing_calls.add(call[0])
+    incoming_calls.add(call[1])
+
+for text in texts:
+    outgoing_texts.add(text[0])
+    incoming_texts.add(text[1])
+
+# Find numbers that make outgoing calls but never send texts, receive texts or receive incoming calls
+telemarketers = outgoing_calls - (incoming_calls | outgoing_texts | incoming_texts)
+
+# Print the list of possible telemarketers in lexicographic order
+print("These numbers could be telemarketers: ")
+for number in sorted(telemarketers):
+    print(number)
+
+
+
+
+
+
