@@ -36,7 +36,7 @@
 
 **Complexity Analysis**:
 - **Algorithm**:  The code iterates over all the calls to find the area codes and mobile prefixes called by people in Bangalore and count the calls made to other fixed lines in Bangalore.
-- **Big O Notation**: The time complexity of this code is $O(n)$ where $n$ is the total number of calls in the input data.
+- **Big O Notation**: The time complexity of this code is $O(n + m log m)$ where $n$ is the total number of calls in the input data and $m$ is the number of unique codes extracted.
 - **Justification**: The code efficiently finds the area codes and mobile prefixes called by people in Bangalore by iterating over the calls and filtering the numbers based on the specified criteria.
 
 ## Task4
@@ -46,6 +46,6 @@
 
 **Complexity Analysis**:
 - **Algorithm**: The code iterates over all the calls and texts to extract the numbers that make outgoing calls, receive incoming calls, send texts, and receive texts
-- **Big O Notation**: The time complexity of this code is $O(n + m)$ where $n$ is the number of is the number of calls and $m$ is the number of texts in the input data.
+- **Big O Notation**: The time complexity of this code is $O(n + m + t log t)$ where $n$ is the number of is the number of calls, $m$ is the number of texts in the input data and $t$ is the number of telemarketers identified.
 - **Justification**: The code efficiently identifies the numbers that could be telemarketers by filtering the numbers based on the specified criteria and performing set operations to find the numbers that make outgoing calls but never send texts, receive texts, or receive incoming calls.
 
